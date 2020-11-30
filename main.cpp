@@ -1,3 +1,10 @@
+/*====================================================================================================================================
+PROJECT NAME: Mario Sokoban.
+Developed by: HAMZA ZITOUNI
+DEV HAMZA 3 - https://github.com/dev-Hamza-3
+Github repository: https://github.com/dev-Hamza-3/Sokoban
+======================================================================================================================================*/
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <SDL/SDL.h>
@@ -31,22 +38,25 @@ int main(int argc, char *argv[])
 
     while (continuer)
 {
-    SDL_WaitEvent(&event); /* Récupération de l'événement dans event */
-    switch(event.type) /* Test du type d'événement */
+    SDL_WaitEvent(&event);
+    switch(event.type)
     {
         case SDL_QUIT: /* Si c'est un événement de type "Quitter" */
             continuer = 0;
             break;
-        case SDL_KEYDOWN: /* Si appui sur une touche */
+        case SDL_KEYDOWN:
             switch (event.key.keysym.sym)
             {
-                case SDLK_KP1:
+                case SDLK_KP1: // 1 = play
                     play();
                     break;
 
-                case SDLK_KP2:
+                case SDLK_KP2: // 2 TO DO
                     continuer = 0;
                     break;
+
+                case SDLK_ESCAPE:
+                    continuer = 0;
 
                 default:
                 break;
