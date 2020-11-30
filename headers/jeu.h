@@ -9,6 +9,6 @@ Github repository: https://github.com/dev-Hamza-3/Sokoban
 #define JEU_H_INCLUDED
 #include <stdio.h>
 
-void play();
+void play(SDL_Surface* ecran);
 
 #endif // JEU_H_INCLUDED
