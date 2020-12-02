@@ -5,14 +5,18 @@ DEV HAMZA 3 - https://github.com/dev-Hamza-3
 Github repository: https://github.com/dev-Hamza-3/Sokoban
 ======================================================================================================================================*/
 
-#ifndef JEU_H_INCLUDED
-#define JEU_H_INCLUDED
-#include <stdlib.h>
+#ifndef MAP_H_INCLUDED
+#define MAP_H_INCLUDED
+
 #include <stdio.h>
-#include <SDL/SDL.h>
-#include <SDL_image.h>
-#include "map.h"
+#include <stdlib.h>
 
-void play(SDL_Surface* ecran);
+typedef struct
+{
+    int L,H;
+    char** tab;
+} carte;
 
-#endif // JEU_H_INCLUDED
+void readMap(carte* m, char* nomF);
+
+#endif // MAP_H_INCLUDED

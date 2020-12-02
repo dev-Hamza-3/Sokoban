@@ -1,9 +1,5 @@
 # depslib dependency file v1.0
-1606729967 source:c:\users\hamza\google drive\hamza\coding\sdl\sokoban\main.cpp
-	<stdlib.h>
-	<stdio.h>
-	<SDL/SDL.h>
-	<SDL_image.h>
+1606945456 source:c:\users\hamza\google drive\hamza\coding\sdl\sokoban\main.cpp
 	"headers/zozor.h"
 	"headers/jeu.h"
 
@@ -393,14 +389,31 @@
 	"begin_code.h"
 	"close_code.h"
 
-1606730458 c:\users\hamza\google drive\hamza\coding\sdl\sokoban\headers\zozor.h
+1606944020 c:\users\hamza\google drive\hamza\coding\sdl\sokoban\headers\zozor.h
+	"jeu.h"
 
-1606730922 c:\users\hamza\google drive\hamza\coding\sdl\sokoban\headers\jeu.h
+1606946371 c:\users\hamza\google drive\hamza\coding\sdl\sokoban\headers\jeu.h
+	<stdlib.h>
 	<stdio.h>
+	<SDL/SDL.h>
+	<SDL_image.h>
+	"map.h"
 
 1606727574 source:c:\users\hamza\google drive\hamza\coding\sdl\sokoban\src\jeu.c
 	"../headers/jeu.h"
 
-1606727670 source:c:\users\hamza\google drive\hamza\coding\sdl\sokoban\src\jeu.cpp
+1606947682 source:c:\users\hamza\google drive\hamza\coding\sdl\sokoban\src\jeu.cpp
 	"../headers/jeu.h"
+	"../headers/map.h"
+	<SDL/SDL.h>
+	<SDL_image.h>
+
+1606948362 c:\users\hamza\google drive\hamza\coding\sdl\sokoban\headers\map.h
+	<stdio.h>
+	<stdlib.h>
+
+1606948174 source:c:\users\hamza\google drive\hamza\coding\sdl\sokoban\src\map.cpp
+	"../headers/jeu.h"
+	<SDL/SDL.h>
+	<SDL_image.h>
 

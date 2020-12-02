@@ -7,6 +7,7 @@ Github repository: https://github.com/dev-Hamza-3/Sokoban
 
 #ifndef ZOZOR_H_INCLUDED
 #define ZOZOR_H_INCLUDED
+#include "jeu.h"
 
 void zozorMove();
 

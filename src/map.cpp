@@ -5,14 +5,27 @@ DEV HAMZA 3 - https://github.com/dev-Hamza-3
 Github repository: https://github.com/dev-Hamza-3/Sokoban
 ======================================================================================================================================*/
 
-#ifndef JEU_H_INCLUDED
-#define JEU_H_INCLUDED
-#include <stdlib.h>
-#include <stdio.h>
+#include "../headers/jeu.h"
 #include <SDL/SDL.h>
 #include <SDL_image.h>
-#include "map.h"
+#define TAILLE 34
 
-void play(SDL_Surface* ecran);
+void readMap(carte* m, char* nomF)
+{
+    FILE* f = NULL;
 
-#endif // JEU_H_INCLUDED
+    f = fopen(nomF,"r");
+
+    int L= fscanf(f,"%d");
+    int H=fscanf(f,"%d");
+    char c;
+    int i,j;
+
+    for(i=0;i<L;i++)
+    {
+        for(j=0;j<H;j++)
+        {
+            //fscanf("c")
+        }
+    }
+}

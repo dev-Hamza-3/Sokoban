@@ -5,14 +5,11 @@ DEV HAMZA 3 - https://github.com/dev-Hamza-3
 Github repository: https://github.com/dev-Hamza-3/Sokoban
 ======================================================================================================================================*/
 
-#ifndef JEU_H_INCLUDED
-#define JEU_H_INCLUDED
-#include <stdlib.h>
-#include <stdio.h>
-#include <SDL/SDL.h>
-#include <SDL_image.h>
-#include "map.h"
+Format des maps: (.msmap)
 
-void play(SDL_Surface* ecran);
-
-#endif // JEU_H_INCLUDED
+Largeur Hauteur
+X: mur 
+C: caisse
+O: objectif
+' ': libre
+M: Mario
