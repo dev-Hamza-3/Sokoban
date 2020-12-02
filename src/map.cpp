@@ -18,6 +18,7 @@ void readMap(carte* m, char* nomF)
 
     int L= fscanf(f,"%d");
     int H=fscanf(f,"%d");
+    fscanf(f,"%c");
     char c;
     int i,j;
 
@@ -25,7 +26,96 @@ void readMap(carte* m, char* nomF)
     {
         for(j=0;j<H;j++)
         {
-            //fscanf("c")
+            if(c='\n')
+            {
+                i--;
+            }
+            else
+            {
+                m->tab[i][j]=fscanf(f,"%c");
+            }
         }
     }
+}
+
+void draw(int x, int y, char c, SDL_Surface* ecran)
+{
+    SDL_Surface* image;
+    SDL_Rect positionImage;
+    switch(c)
+    {
+        case 'M':
+        image = SDL_LoadBMP("img/marios_bas.bmp");
+        break;
+
+        case 'C':
+        image = SDL_LoadBMP("img/caisse.bmp");
+        break;
+
+        case ' ':
+        break;
+
+        case 'O':
+        image = SDL_LoadBMP("img/objectif.bmp");
+        break;
+
+        case 'X':
+        image = SDL_LoadBMP("img/mur.bmp");
+        break;
+
+        default:
+        break;
+
+    }
+
+    positionImage.x = x * TAILLE;
+    positionImage.y = y * TAILLE;
+    SDL_BlitSurface(image, NULL, ecran, &positionImage);
+    SDL_Flip(ecran);
+}
+
+void funDraw(SDL_Surface* ecran, int x, int y)
+{
+    SDL_Event event;
+    SDL_Surface* image;
+    SDL_Rect positionImage;
+    SDL_WaitEvent(&event);
+    switch(event.type)
+    {
+        case SDL_KEYDOWN:
+            switch (event.key.keysym.sym)
+            {
+
+                case SDLK_1:
+                    image = SDL_LoadBMP("img/mur.bmp");
+                    break;
+
+                case SDLK_2:
+                    image = SDL_LoadBMP("img/mario_bas.bmp");
+                    break;
+
+                case SDLK_3:
+                    image = SDL_LoadBMP("img/caisse.bmp");
+                    break;
+
+                case SDLK_4:
+                    image = SDL_LoadBMP("img/objectif.bmp");
+                    break;
+
+                default:
+                break;
+            }
+    }
+    positionImage.x = x * TAILLE;
+    positionImage.y = y * TAILLE;
+    SDL_BlitSurface(image, NULL, ecran, &positionImage);
+    SDL_FreeSurface(image);
+    SDL_Flip(ecran);
+}
+
+char askDraw()
+{
+    char c;
+    scanf("%c",c);
+    return c;
 }

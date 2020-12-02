@@ -14,51 +14,27 @@ Github repository: https://github.com/dev-Hamza-3/Sokoban
 void play(SDL_Surface* ecran)
 {
 
-    SDL_Surface  *caisse = NULL;
-    SDL_Rect positionCaisse;
+    SDL_Surface  *caisse = NULL, *image = NULL;
     SDL_Event event;
-    caisse = SDL_LoadBMP("img/mur.bmp");
+    SDL_Rect positionImage;
     int continuer = 1, i=0, j=0;
+    char ask;
+    image = SDL_LoadBMP("img/mario_bas.bmp");
+
+    //carte* m = NULL;
+    //readMap(m,"maps/map1.msmap");
 
     for (i=0;i<30;i++)
     {
         for(j=0;j<15;j++)
         {
-            positionCaisse.x = i * TAILLE;
-            positionCaisse.y = j * TAILLE;
-            SDL_BlitSurface(caisse, NULL, ecran, &positionCaisse);
+            positionImage.x = i * TAILLE;
+            positionImage.y = j * TAILLE;
+            SDL_BlitSurface(image, NULL, ecran, &positionImage);
         }
     }
 
-    int
-
-    carte* m = NULL;
-    m->tab =(char*)malloc(sizeof(char)*TAILLE);
-    SDL_Flip(ecran);
-    readMap(m,"map1.msmap");
-
-
-    while (continuer)
-{
-    SDL_WaitEvent(&event);
-    switch(event.type)
-    {
-        case SDL_QUIT: /* Si c'est un événement de type "Quitter" */
-            continuer = 0;
-            break;
-        case SDL_KEYDOWN:
-            switch (event.key.keysym.sym)
-            {
-
-                case SDLK_ESCAPE:
-                    continuer = 0;
-                default:
-                break;
-            }
-    }
-}
-
-    SDL_FreeSurface(caisse);
+    SDL_FreeSurface(image);
 
     return;
 }

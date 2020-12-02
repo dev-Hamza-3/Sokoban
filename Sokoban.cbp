@@ -44,9 +44,11 @@
 		</Linker>
 		<Unit filename="cb.bmp" />
 		<Unit filename="headers/jeu.h" />
+		<Unit filename="headers/map.h" />
 		<Unit filename="headers/zozor.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/jeu.cpp" />
+		<Unit filename="src/map.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
