@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     SDL_Flip(ecran);
     SDL_Flip(ecran);
 
-    // SDL_EnableKeyRepeat(10, 10); /* Activation de la répétition des touches */
+    // SDL_EnableKeyRepeat(10, 10); /* Activation de la répétition des touches (pour après si besoin)*/
 
     while (continuer)
 {
