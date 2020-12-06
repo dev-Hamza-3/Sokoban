@@ -13,8 +13,11 @@ int main(int argc, char *argv[])
 {
 
     SDL_Surface *ecran = NULL, *menu = NULL;
-    SDL_Rect positionMenu;
+    SDL_Rect positionMenu, positionZero;
     SDL_Event event; // Cette variable servira plus tard à gérer les événements
+
+    positionZero.x = 0;
+    positionZero.y = 0;
     int continuer = 1;
 
     SDL_Init(SDL_INIT_VIDEO);
@@ -45,9 +48,10 @@ int main(int argc, char *argv[])
             {
                 case SDLK_KP1: // 1 = play
                     SDL_FillRect(ecran, NULL, SDL_MapRGB(ecran->format, 255,255,255));
+                    SDL_BlitSurface(ecran, NULL, ecran, &positionZero);
+                    SDL_Flip(ecran);
                     play(ecran);
-                    SDL_FreeSurface(ecran);
-                    SDL_Quit();
+                    continuer =1;
                     break;
 
                 case SDLK_KP2: // 2 TO DO
@@ -65,7 +69,7 @@ int main(int argc, char *argv[])
 
 }
 
-
+    SDL_FreeSurface(ecran);
     SDL_FreeSurface(menu);
     SDL_Quit();
 

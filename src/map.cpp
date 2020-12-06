@@ -109,8 +109,8 @@ void funDraw(SDL_Surface* ecran, int x, int y)
     positionImage.x = x * TAILLE;
     positionImage.y = y * TAILLE;
     SDL_BlitSurface(image, NULL, ecran, &positionImage);
-    SDL_FreeSurface(image);
     SDL_Flip(ecran);
+    SDL_FreeSurface(image);
 }
 
 char askDraw()

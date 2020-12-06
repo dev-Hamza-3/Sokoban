@@ -14,27 +14,43 @@ Github repository: https://github.com/dev-Hamza-3/Sokoban
 void play(SDL_Surface* ecran)
 {
 
-    SDL_Surface  *caisse = NULL, *image = NULL;
+    SDL_Surface *image = NULL, *caisse = NULL, *mario_bas = NULL, *mur = NULL, *objectif = NULL;
     SDL_Event event;
     SDL_Rect positionImage;
+    char c;
     int continuer = 1, i=0, j=0;
-    char ask;
-    image = SDL_LoadBMP("img/mario_bas.bmp");
-
-    //carte* m = NULL;
-    //readMap(m,"maps/map1.msmap");
+    int counter=0;
+    caisse = SDL_LoadBMP("img/caisse.bmp");
+    mario_bas = SDL_LoadBMP("img/mario_bas.bmp");
+    mur = SDL_LoadBMP("img/mur.bmp");
+    objectif = SDL_LoadBMP("img/objectif.bmp");
 
     for (i=0;i<30;i++)
     {
         for(j=0;j<15;j++)
         {
+            counter++;
+            switch(counter%4)
+            {
+                case 0:
+                    image = caisse;
+                    break;
+                case 1:
+                    image = mur;
+                    break;
+                case 2:
+                    image = objectif;
+                    break;
+                case 3:
+                    image = mario_bas;
+                    break;
+            }
             positionImage.x = i * TAILLE;
             positionImage.y = j * TAILLE;
             SDL_BlitSurface(image, NULL, ecran, &positionImage);
+            SDL_Flip(ecran);
         }
     }
+    SDL_Flip(ecran);
 
-    SDL_FreeSurface(image);
-
-    return;
 }
