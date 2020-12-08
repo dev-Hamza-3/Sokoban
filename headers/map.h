@@ -26,4 +26,6 @@ void funDraw(SDL_Surface* ecran, int x, int y);
 
 char askDraw();
 
+void afficher(carte* m);
+
 #endif // MAP_H_INCLUDED

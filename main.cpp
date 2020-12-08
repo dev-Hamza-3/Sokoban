@@ -12,7 +12,7 @@ Github repository: https://github.com/dev-Hamza-3/Sokoban
 int main(int argc, char *argv[])
 {
 
-    SDL_Surface *ecran = NULL, *menu = NULL;
+    /*SDL_Surface *ecran = NULL, *menu = NULL;
     SDL_Rect positionMenu, positionZero;
     SDL_Event event; // Cette variable servira plus tard à gérer les événements
 
@@ -33,14 +33,14 @@ int main(int argc, char *argv[])
     SDL_Flip(ecran);
     SDL_Flip(ecran);
 
-    // SDL_EnableKeyRepeat(10, 10); /* Activation de la répétition des touches (pour après si besoin)*/
+    // SDL_EnableKeyRepeat(10, 10); // Activation de la répétition des touches (pour après si besoin)
 
     while (continuer)
 {
     SDL_WaitEvent(&event);
     switch(event.type)
     {
-        case SDL_QUIT: /* Si c'est un événement de type "Quitter" */
+        case SDL_QUIT:
             continuer = 0;
             break;
         case SDL_KEYDOWN:
@@ -71,7 +71,13 @@ int main(int argc, char *argv[])
 
     SDL_FreeSurface(ecran);
     SDL_FreeSurface(menu);
-    SDL_Quit();
+    SDL_Quit();*/
+
+    printf("loool\n");
+    /*carte* m;
+    printf("loool\n");
+    readMap(m,"maps/map1.msmap");
+    afficher(m);*/
 
     return EXIT_SUCCESS;
 }

@@ -38,6 +38,18 @@ void readMap(carte* m, char* nomF)
     }
 }
 
+void afficher(carte* m)
+{
+    printf("loool\n");
+    for(int i;i<m->L;i++)
+    {
+        for(int j;j<m->H;j++)
+        {
+            printf("%c",m->tab[i][j]);
+        }
+    }
+}
+
 void draw(int x, int y, char c, SDL_Surface* ecran)
 {
     SDL_Surface* image;
